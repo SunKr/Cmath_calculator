@@ -10,23 +10,19 @@ void mathCalculator()
     double argument1, argument2, answer;
     
     cin >> command;//prime
-    cin >> argument1;//argument1
-    if(command == "exponential")
-    {
-        answer = exp(argument1);
-        cout << "Command    Argument1   [Argument2]     Answer"<< endl;
-        cout << command << "\t" << argument1 << "\t\t\t" <<  answer << endl;
-    }
-    
-
     
     while( !cin.fail() )//test
     {
         //process
-        cin >> command;//re-prime
         cin >> argument1;
-
-        if(command == "natural-log")
+        
+        if(command == "exponential")
+        {
+            answer = exp(argument1);
+            cout << "Command    Argument1   [Argument2]     Answer"<< endl;
+            cout << command << "\t" << argument1 << "\t\t\t" <<  answer << endl;
+        }
+        else if(command == "natural-log")
         {
             answer = log(argument1);
             cout << command << "\t" << argument1 << "\t\t\t" <<  answer << endl;
@@ -62,6 +58,8 @@ void mathCalculator()
         {
             cout << "Unkown command: othercommand" << endl;
         }
+        
+        cin >> command;//re-prime
     }
     
 }
